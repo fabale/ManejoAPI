@@ -1,9 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Información Basica
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-card-content *ngFor='let pais of paises'>
+        <ion-card-subtitle>
+            <ion-list lines='none'>
+                <ion-list-header>
+                    <ion-label>
+                        <h2>Recursos</h2>
+                    </ion-label>
+                </ion-list-header>
+                <ion-item href="">
+                    <ion-icon slot="start" color="medium" name="book"></ion-icon>
+                    <ion-label>Nombre: {{pais.name}}</ion-label>
+                </ion-item>
+                <ion-item href="">
+                    <ion-icon slot="start" color="medium" name="book"></ion-icon>
+                    <ion-label>Capital: {{pais.capital}}</ion-label>
+                </ion-item>
+                <ion-item href="">
+                    <ion-icon slot="start" color="medium" name="book"></ion-icon>
+                    <ion-label>Población: {{pais.population}}</ion-label>
+                </ion-item>
+                <ion-item href="">
+                    <ion-icon slot="start" color="medium" name="book"></ion-icon>
+                    <ion-label>Región: {{pais.region}}</ion-label>
+                </ion-item>
+                <ion-item href="">
+                    <ion-icon slot="start" color="medium" name="book"></ion-icon>
+                    <ion-label>Sub-Región: {{pais.subregion}}</ion-label>
+                </ion-item>
+                <ion-item href="">
+                    <ion-icon slot="start" color="medium" name="book"></ion-icon>
+                    <ion-label>Idioma Principal: {{pais.languages[0].name}}</ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-subtitle>
+        <ion-card-header>
+            <img [src]='pais.flag' [title]='pais.name'>
+        </ion-card-header>
+    </ion-card-content>
+</ion-content>
